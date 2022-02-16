@@ -9,6 +9,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
+            integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
@@ -38,11 +41,8 @@
     <main>
      <section class="portfolio">
          <div class="container">
-            <!-- сделать скрытый заголовок h1-->
-            <h1 class="portfolio-title">портфолио</h1>
-            
-            <!-- сделать скрытый заголовок h2 -->
-            <h2 class="portfolio-filtr">фильтр</h2>
+            <h1 class="portfolio-title visually-hidden">портфолио</h1>
+            <h2 class="portfolio-filtr visually-hidden">фильтр</h2>
             <ul class="filter list">
                 <li><button class="filter-button" type="button">Все</button></li>
                 <li><button class="filter-button" type="button">Веб-сайты</button></li>
