@@ -13,9 +13,14 @@
   /* шрифты */
   --main-font: "Roboto", sans-serif;
   --logo-font: "Raleway", sans-serif;
+
+  /* геометрия */
+  --card-set-gap: 30px;
 }
 
 body {
+  width: 1600px;
+
   color: var(--primary-text-color);
   background-color: var(--primary-background-color);
   font-family: var(--main-font);
@@ -44,6 +49,12 @@ ul {
   padding: 0px;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 .list {
   list-style: none;
 }
@@ -61,9 +72,6 @@ ul {
 }
 
 /* шапка сайта */
-.page-header {
-  margin-bottom: 94px;
-}
 
 .main-nav {
   display: flex;
@@ -156,7 +164,6 @@ ul {
 .hero {
   padding-top: 200px;
   padding-bottom: 200px;
-  margin-bottom: 95px;
 
   background-color: var(--dark-background-color);
   text-align: center;
@@ -201,13 +208,17 @@ ul {
 }
 
 /* секция особенностей */
-.feature-section {
-  margin-bottom: 95px;
-}
 
 .feature-list {
   display: flex;
-  background-color: tomato;
+}
+
+.feature-list .item {
+  width: 270px;
+}
+
+.feature-list .item:not(:last-child) {
+  margin-right: 30px;
 }
 
 .feature-list .title {
@@ -230,23 +241,44 @@ ul {
 }
 
 /* секция: чем занимаемся */
-/* .activity-section {
-  margin-bottom: 95px;
-} */
-.activity-section .section-title {
+section.activity.section {
+  padding-top: 0;
+}
+
+.activity .list {
+  display: flex;
+}
+
+.activity-list .item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.activity .section-title {
   margin-bottom: 50px;
 }
 
 /* секция: команда */
-.team .section {
+
+.section.team.section {
   background-color: var(--team-background-color);
 }
-/* .team-section .section-title {
+.team .section-title {
   margin-bottom: 50px;
-} */
+}
+
+.team .list {
+  display: flex;
+  margin-right: calc(-1 * var(--card-set-gap));
+}
+
+.team-list > .item {
+  flex-basis: calc(100% / 4 - var(--card-set-gap));
+  margin-right: var(--card-set-gap);
+}
 
 .team-list .title {
   margin-bottom: 10px;
+
   color: var(--title-text-color);
   font-weight: 500;
   font-size: 16px;
@@ -260,12 +292,31 @@ ul {
   letter-spacing: 0.03em;
 }
 
+.card-content {
+  padding-top: var(--card-set-gap);
+  padding-bottom: var(--card-set-gap);
+  text-align: center;
+
+  background-color: #ffffff;
+}
+
 /* футер */
+
 .footer {
   background-color: var(--dark-background-color);
 }
 
+.footer .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
 .footer-logo {
+  margin-bottom: 20px;
+
   color: var(--primary-background-color);
   text-decoration: none;
   font-family: Raleway;
@@ -280,6 +331,8 @@ ul {
 }
 
 .address {
+  margin-bottom: 9px;
+
   color: var(--primary-background-color);
   font-weight: 400;
   font-size: 14px;
@@ -295,9 +348,14 @@ ul {
   line-height: 1.71;
   letter-spacing: 0.03em;
 }
+
 .footer-list .contact:hover,
 .footer-list .contact:focus {
   color: var(--accent-color);
+}
+
+.footer-list .item:first-child {
+  margin-bottom: 9px;
 }
 
 /* стили для портфолио */
